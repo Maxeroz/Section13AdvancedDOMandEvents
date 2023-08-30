@@ -173,4 +173,7 @@ h1.addEventListener('mouseenter', alertH1);
 //   alert('onmouseenter: Great! You are reading the heading :D');
 // };
 
-console.log(h1);
+// console.log(h1);
+
+///////////////////////////////////////
+// Event Propagation: Bubbling and Capturing
