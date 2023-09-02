@@ -116,7 +116,7 @@ tabsContainer.addEventListener('click', function (e) {
     .classList.add('operations__content--active');
 });
 
-// Menu fade anumation
+// Menu fade animation
 const handleOver = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
@@ -126,13 +126,25 @@ const handleOver = function (e) {
     siblings.forEach(el => {
       if (el !== link) el.style.opacity = this;
     });
-    logo.style.this = this;
+    logo.style.opacity = this;
   }
 };
 
 // Passing "argument" into handler
 nav.addEventListener('mouseover', handleOver.bind(0.5));
 nav.addEventListener('mouseout', handleOver.bind(1));
+
+// Sticky nagivation
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+
+  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+});
+
 /*
 ///////////////////////////////////////
 ///////////////////////////////////////
@@ -356,4 +368,7 @@ console.log(h1.parentElement.children);
 
 ///////////////////////////////////////
 // Passing Arguments to Event Handlers
+
+///////////////////////////////////////
+// Implementing a Sticky Navigation: The Scroll Event
 */
