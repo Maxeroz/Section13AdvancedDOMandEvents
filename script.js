@@ -267,7 +267,6 @@ const slider = function () {
   };
 
   // Prev slide
-
   const prevSlide = function () {
     if (curSlide === 0) {
       curSlide = maxSlide - 1;
@@ -290,7 +289,7 @@ const slider = function () {
   btnLeft.addEventListener('click', prevSlide);
 
   document.addEventListener('keydown', function (e) {
-    console.log(e);
+    // console.log(e);
     if (e.key === 'ArrowLeft') prevSlide();
     e.key === 'ArrowRight' && nextSlide();
   });
@@ -555,4 +554,21 @@ observer.observe(section1);
 
 ///////////////////////////////////////
 // Building a Slider Component: Part 2
+
+///////////////////////////////////////
+// Lifecycle DOM Events
 */
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree is built!', e);
+});
+
+window.addEventListener('load', function (e) {
+  console.log('Page is fully loaded', e);
+});
+
+// window.addEventListener('beforeunload', function (e) {
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue = '';
+// });
